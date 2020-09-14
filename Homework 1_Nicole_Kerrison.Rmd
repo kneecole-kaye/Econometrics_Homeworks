@@ -1,0 +1,288 @@
+---
+title: "Homework_1"
+author: "Nicole_Kerrison"
+date: "9/12/2020"
+output: html_document
+---
+
+Question 1
+
+The names of the people in my homework group are Isabela Vieira, Akimawe Kadiri, Christopher Tinevra, Mostafa Ragheb. We are meeting weekly on zoom calls to discuss the homework and the class notes.
+
+
+Question 3 - A fair Dice Roll
+
+Theoretical probability of rolling a 6 - the expectation is to roll a 6 at least once  1/36 (.02778)
+
+
+How to create a fair dice simulation in R. First we begin by creating a variable called dice rolls and set the size to 2 so we make clear we are using 2 dice and any time we roll we want replacements of numbers.
+
+```{r}
+die.rolls <- function (){
+  dice <- sample(x=1:6, size = 2, replace = TRUE)}
+
+```
+
+Then we want to create a simulation that runs this 20 times
+
+```{r}
+simtrial <- replicate(20,die.rolls())
+```
+
+Run the trial
+
+```{r}
+simtrial
+```
+
+Then create a table to of the simulation once its complete.
+
+```{r}
+table(simtrial)
+```
+Results of the experimental probability is 6/36 (0.1667)
+
+#Then generate the frequency of the outcome and plot the data
+
+Frequency - this is the % of times we
+virtually rolled the numbers below
+
+```{r}
+table(simtrial)/length(simtrial)
+```
+
+
+Plot - This plots the number of times in the simulation roll that we record a number 
+
+```{r}
+plot(table(simtrial), xlab = 'Dice number', ylab = 'Frequency', main = '20 Rolls of 2 Fair Dice')
+```
+
+
+
+Question 4
+
+Lecture 1 Introduction
+
+```{r}
+x <- 1:50
+w <- 1 + sqrt(x)/2
+example1 <- data.frame(x=x, y= x + rnorm(x)*w)
+attach(example1)
+```
+
+
+```{r}
+fm <- lm(y ~ x)
+summary(fm)
+
+```
+
+
+```{r}
+
+lrf <- lowess(x, y)
+plot(x, y)
+lines(x, lrf$y)
+abline(0, 1, lty=3)
+abline(coef(fm))
+
+```
+
+
+```{r}
+detach()
+
+```
+
+
+```{r}
+setwd("C:\\Users\\Nicol\\Documents\\CCNY\\Graduate School\\Fall 2020\\Econometrics\\ACS Data for R")
+load("acs2017_ny_data.RData")
+acs2017_ny[1:10,1:7]
+
+```
+
+```{r}
+attach(acs2017_ny)
+```
+
+
+```{r}
+summary(acs2017_ny)
+
+```
+
+
+```{r}
+print(NN_obs <- length(AGE))
+
+```
+
+
+```{r}
+
+summary(AGE[female == 1])
+
+```
+
+
+```{r}
+
+summary(AGE[!female])
+
+```
+
+
+```{r}
+
+mean(AGE[female == 1])
+
+```
+
+```{r}
+
+sd(AGE[female == 1])
+
+```
+
+```{r}
+
+mean(AGE[!female])
+
+```
+
+```{r}
+
+sd(AGE[!female])
+
+```
+
+
+Sample data to look at
+
+```{r}
+
+summary(INCWAGE[DEGFIELD])
+
+```
+
+Histogram of the data (and the issues with Topcoding)
+
+```{r}
+hist(AGE[(AGE > 90)])
+
+```
+
+```{r}
+mean(AGE[ (female ==1) & (AGE<90) ])
+```
+
+```{r}
+hist(AGE[(AGE < 65)])
+```
+
+
+
+Question 5 - Analyzing Stock Prices - S&P 500
+
+```{r}
+ setwd("~/CCNY/Graduate School/Fall 2020/Econometrics/Homework/September 14th")
+`S_P_Stock_Price` <- read.csv("~/CCNY/Graduate School/Fall 2020/Econometrics/Homework/September 14th/S&P 500 Index Price.csv")
+View(`S_P_Stock_Price`)
+```
+
+
+
+#Make sure you upload only csv files and never excel
+
+Calculating the returns on the S&P with the data imported in R
+
+This tells you the values at the beginning of the table
+
+
+```{r}
+head(S_P_Stock_Price)
+```
+
+This tells you the values at the end of the table
+
+```{r}
+tail(S_P_Stock_Price)
+```
+
+
+this brings up just the adj close numbers of the S&P
+
+```{r}
+S_P_Stock_Price[1:30, "Adj.Close"]
+```
+
+
+We want to isolate the adj close values of the s&p in order to calculate returns
+
+We want to obtain the specific price between these dates. The brackets are blank because there is only 
+21 values in the data set. We would need a range or index if there was more. 
+
+```{r}
+new_price <- S_P_Stock_Price[ ,"Adj.Close"]
+```
+
+
+Now we create a new variable with just the adjusted close prices. This code will give you the adj close price and lable the rows with the date.
+
+```{r}
+sp_pricenew <- S_P_Stock_Price[, "Adj.Close", drop = FALSE]
+rownames(sp_pricenew)<- S_P_Stock_Price$Date
+head(sp_pricenew)
+```
+
+
+continuous compounding returns
+Now you want to find the return over a period of time and need to provide a value "n"
+so in your calculation you know that you are subtracting from the previous day
+
+The mean return is the ln(current price/previous) but we will use log in the formal (and R will compute as LN)
+
+```{r}
+n <-nrow(sp_pricenew)
+
+sp_returns <- log(sp_pricenew[2:n,1])-log(sp_pricenew[1:(n-1),1])
+```
+
+
+Assign a name to the continuous returns 
+
+```{r}
+names(sp_returns)<-S_P_Stock_Price[2:n,1]
+head(sp_returns)
+```
+
+
+summary of the new data by running a quick analysis of the returns
+
+```{r}
+summary(sp_returns)
+```
+
+
+observing all of the data at once
+
+```{r}
+print(sp_returns)
+```
+
+And finally to view the data as a row/columnn, use function cbind below. This will allow data to be organize as a table for you to see the dates and data. There are specific dates where negative returns have followed a positive return day. For example 7/27 and consecutive days of postive returns followed a negative return day were  7/7, 7/16, 7/23. The hot hands fallacy is based on a bias that if you observe or experience a positive or successful outcome, then one has a greater chance of success in future attempts. In this case as wee can see from the "positive returns spree" after two days there is a drop in the returns. This is not a good indicator of how an index is pricing.
+
+```{r}
+cbind(sp_returns)
+```
+
+Here is a graph of the returns
+
+```{r}
+plot(sp_returns, type = "l", col = "blue", lwd = 2, 
+     ylab = "Returns", main = "Daily Returns for S&P 500 in July")
+legend(x = 'topleft', legend = 'sp_returns', lty = 1, lwd = 2, col = 'blue')
+
+```
