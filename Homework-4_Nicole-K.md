@@ -128,7 +128,7 @@ to_be_predicted1$yhat <- predict(model_temp1, newdata = to_be_predicted1)
 lines(yhat ~ AGE, data = to_be_predicted1)
 ```
 
-![](Homework-4_Nicole-K_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
+![](unnamed-chunk-4-1.png)<!-- -->
 
 ``` r
 detach()
@@ -269,7 +269,7 @@ to_be_predicted2$yhat <- predict(model_temp2, newdata = to_be_predicted2)
 lines(yhat ~ AGE, data = to_be_predicted2)
 ```
 
-![](Homework-4_Nicole-K_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
+![](unnamed-chunk-6-1.png)<!-- -->
 
 ``` r
 detach()
@@ -385,7 +385,7 @@ to_be_predicted3$yhat <- predict(model_temp3, newdata = to_be_predicted3)
 lines(yhat ~ AGE, data = to_be_predicted3)
 ```
 
-![](Homework-4_Nicole-K_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
+![](unnamed-chunk-8-1.png)<!-- -->
 
 ``` r
 detach()
