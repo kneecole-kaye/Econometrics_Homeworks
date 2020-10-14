@@ -2,4 +2,4 @@
 Nicole's Homeworks will be here
 
 
-Please review Homework two as MD file for github
+Please review Homework 4 file for Lab on Regression
