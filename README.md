@@ -2,4 +2,4 @@
 Nicole's Homeworks will be here
 
 
-Please review Homework 4 file for Lab on Regression
+Please review Homework 5 file for Lab on non linear regression
