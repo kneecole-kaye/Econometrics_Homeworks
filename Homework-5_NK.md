@@ -107,7 +107,7 @@ to_be_predicted1$yhat <- predict(model1, newdata = to_be_predicted1)
 lines(yhat ~ AGE, data = to_be_predicted1)
 ```
 
-![](Homework-5_NK_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
+![](unnamed-chunk-2-1.png)<!-- -->
 
 The coefficient estimates for Model 1 linear regression demonstrates
 multiple income wages depending on educaltion level (high school degree,
@@ -216,7 +216,7 @@ to_be_predicted2$yhat <- predict(model2, newdata = to_be_predicted2)
 lines(yhat ~ AGE, data = to_be_predicted2)
 ```
 
-![](Homework-5_NK_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
+![](unnamed-chunk-3-1.png)<!-- -->
 
 ``` r
 detach()
@@ -340,7 +340,7 @@ to_be_predicted3$yhat <- predict(model3, newdata = to_be_predicted3)
 lines(yhat ~ AGE, data = to_be_predicted3)
 ```
 
-![](Homework-5_NK_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
+![](unnamed-chunk-4-1.png)<!-- -->
 
 Model 3 expands on the conditions of model 2 but this time, the
 regression model is based on log of age and log of age squared. However,
@@ -467,7 +467,7 @@ to_be_predicted4$yhat <- predict(model4, newdata = to_be_predicted4)
 lines(yhat ~ AGE, data = to_be_predicted4)
 ```
 
-![](Homework-5_NK_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
+![](unnamed-chunk-5-1.png)<!-- -->
 
 Model 4 expands on the conditions of model 2 but this time, the
 regression model includes age as a polynomial terms where age variable
@@ -586,7 +586,7 @@ to_be_predicted5$yhat <- predict(model5, newdata = to_be_predicted5)
 lines(yhat ~ AGE, data = to_be_predicted5)
 ```
 
-![](Homework-5_NK_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
+![](unnamed-chunk-6-1.png)<!-- -->
 
 Model 5 expands on the conditions of model 2 but this time, the
 regression model is based on log of income wages which is the dependent
