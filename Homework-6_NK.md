@@ -96,7 +96,7 @@ dat_graph <-subset(dat_use,graph_obs)
  plot(LABFORCE ~ AGE, pch = 16, ylim = c(0,1), data = dat_graph, main = "Labor Force", xlab = "Age", ylab = "Labor Force Status", col = c("blue","gray"))
 ```
 
-![](Homework-6_NK_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
+![](unnamed-chunk-3-1.png)<!-- -->
 
 The following lab model illustrates a simple probit and logit non linear
 regression where the dependent variable is the labor force participation
