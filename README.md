@@ -2,4 +2,4 @@
 Nicole's Homeworks will be here
 
 
-Please review Homework 6 document Homework-6_NK.md file for Lab on non linear regression using probit and logit models
+Please review Homework 7 document Homework-7_NK.md file for Lab on non linear regressions and classification models.
