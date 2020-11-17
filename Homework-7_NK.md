@@ -23,7 +23,7 @@ levels(data_use1$earn_lastyr) <- c("0","$01-$4999","$5000-$9999","$10000-$14999"
 plot(data_use1$earn_lastyr, xlab= "Income", ylab = "Participants")
 ```
 
-![](Homework-7_NK_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
+![](unnamed-chunk-2-1.png)<!-- -->
 
 We want to create a subset from the initial data frame of the survey for
 Adults 21 and older. We are considering this assumption because most
@@ -535,7 +535,7 @@ round(importance(model_randFor),2)
 varImpPlot(model_randFor)
 ```
 
-![](Homework-7_NK_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
+![](unnamed-chunk-8-1.png)<!-- -->
 
 ``` r
 pred_model1 <- predict(model_randFor,  s_dat_test)
@@ -596,19 +596,19 @@ vnat=vnat[-1,ncol(vnat)]
 axis(4, at=vnat,line=-.5,label=names(sobj$data[,-1]),las=1,tick=FALSE, cex.axis=0.5) 
 ```
 
-![](Homework-7_NK_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
+![](unnamed-chunk-9-1.png)<!-- -->
 
 ``` r
 plot(model1_elasticnet, xvar = "lambda")
 ```
 
-![](Homework-7_NK_files/figure-gfm/unnamed-chunk-9-2.png)<!-- -->
+![](unnamed-chunk-9-2.png)<!-- -->
 
 ``` r
 plot(model1_elasticnet, xvar = "dev", label = TRUE)
 ```
 
-![](Homework-7_NK_files/figure-gfm/unnamed-chunk-9-3.png)<!-- -->
+![](unnamed-chunk-9-3.png)<!-- -->
 
 ``` r
 print(model1_elasticnet)
@@ -761,19 +761,19 @@ vnat=vnat[-1,ncol(vnat)]
 axis(4, at=vnat,line=-.5,label=names(sobj$data[,-1]),las=1,tick=FALSE, cex.axis=0.5) 
 ```
 
-![](Homework-7_NK_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
+![](unnamed-chunk-10-1.png)<!-- -->
 
 ``` r
 plot(model2_elasticnet, xvar = "lambda")
 ```
 
-![](Homework-7_NK_files/figure-gfm/unnamed-chunk-10-2.png)<!-- -->
+![](unnamed-chunk-10-2.png)<!-- -->
 
 ``` r
 plot(model2_elasticnet, xvar = "dev", label = TRUE)
 ```
 
-![](Homework-7_NK_files/figure-gfm/unnamed-chunk-10-3.png)<!-- -->
+![](unnamed-chunk-10-3.png)<!-- -->
 
 ``` r
 print(model2_elasticnet)
@@ -953,19 +953,19 @@ vnat=vnat[-1,ncol(vnat)]
 axis(4, at=vnat,line=-.5,label=names(sobj$data[,-1]),las=1,tick=FALSE, cex.axis=0.5) 
 ```
 
-![](Homework-7_NK_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
+![](unnamed-chunk-11-1.png)<!-- -->
 
 ``` r
 plot(model3_elasticnet, xvar = "lambda")
 ```
 
-![](Homework-7_NK_files/figure-gfm/unnamed-chunk-11-2.png)<!-- -->
+![](unnamed-chunk-11-2.png)<!-- -->
 
 ``` r
 plot(model3_elasticnet, xvar = "dev", label = TRUE)
 ```
 
-![](Homework-7_NK_files/figure-gfm/unnamed-chunk-11-3.png)<!-- -->
+![](unnamed-chunk-11-3.png)<!-- -->
 
 ``` r
 print(model3_elasticnet)
